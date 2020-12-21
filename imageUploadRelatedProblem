@@ -1,0 +1,8 @@
+<?php
+$file = $_FILES['photo']['tmp_name'];
+$image = addslashes(file_get_contents($_FILES['photo']['tmp_name']));
+$imgName = addslashes($_FILES['photo']['name']);
+$imgSize = getimagesize($_FILES['photo']['tmp_name']);
+$des = "/opt/lampp/htdocs/html_PHP/files/image.png";
+move_uploaded_file($file,$des.$imgName);
+?>
